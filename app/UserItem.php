@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PackageItems extends Model
+class UserItem extends Model
 {
     //
 }

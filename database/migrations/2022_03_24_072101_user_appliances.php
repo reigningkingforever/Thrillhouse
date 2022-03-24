@@ -14,11 +14,15 @@ class Userappliances extends Migration
   public function up()
   {
     //
-    Schema::create('userappliances', function (Blueprint $table) {
+    Schema::create('user_appliances', function (Blueprint $table) {
       $table->bigIncrements('id');
-      $table->string('name');
+      $table->unsignedBigInteger('user_id');
+      $table->unsignedBigInteger('appliance_id');
+      $table->integer('quantity');
       $table->string('power');
-      $table->string('count');
+      $table->timestamps();
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('appliance_id')->references('id')->on('appliances')->onDelete('cascade');
     });
   }
 
@@ -30,6 +34,6 @@ class Userappliances extends Migration
   public function down()
   {
     //
-    Schema::drop('userappliances');
+    Schema::drop('user_appliances');
   }
 }

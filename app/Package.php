@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Userpakages extends Model
+class Package extends Model
 {
     //
 }

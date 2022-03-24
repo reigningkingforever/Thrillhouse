@@ -19,6 +19,7 @@ class Categories extends Migration
       $table->bigIncrements('id');
       $table->string('name');
       $table->string('details');
+      $table->timestamps();
     });
     DB::table('categories')->insert(array(
       array('id' => 1, 'name' => 'Inverters', 'details' => 'Controls the entire system'),

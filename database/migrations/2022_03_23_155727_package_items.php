@@ -15,22 +15,25 @@ class PackageItems extends Migration
   public function up()
   {
     //
-    Schema::create('packageitems', function (Blueprint $table) {
+    Schema::create('package_items', function (Blueprint $table) {
       $table->bigIncrements('id');
       $table->unsignedBigInteger('package_id');
       $table->unsignedBigInteger('item_id');
-      $table->string('count');
+      $table->string('quantity');
+      $table->timestamps();
+      $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
+      $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
     });
-    DB::table('packageitems')->insert(array(
-      array('id' => 1, 'package_id' => 1, 'item_id' => 1, 'count' => '1'),
-      array('id' => 2, 'package_id' => 1, 'item_id' => 2, 'count' => '1'),
-      array('id' => 3, 'package_id' => 1, 'item_id' => 3, 'count' => '1'),
-      array('id' => 4, 'package_id' => 2, 'item_id' => 1, 'count' => '1'),
-      array('id' => 5, 'package_id' => 2, 'item_id' => 2, 'count' => '2'),
-      array('id' => 6, 'package_id' => 2, 'item_id' => 3, 'count' => '1'),
-      array('id' => 7, 'package_id' => 3, 'item_id' => 1, 'count' => '1'),
-      array('id' => 8, 'package_id' => 3, 'item_id' => 2, 'count' => '3'),
-      array('id' => 9, 'package_id' => 3, 'item_id' => 3, 'count' => '1'),
+    DB::table('package_items')->insert(array(
+      array('id' => 1, 'package_id' => 1, 'item_id' => 1, 'quantity' => '1'),
+      array('id' => 2, 'package_id' => 1, 'item_id' => 2, 'quantity' => '1'),
+      array('id' => 3, 'package_id' => 1, 'item_id' => 3, 'quantity' => '1'),
+      array('id' => 4, 'package_id' => 2, 'item_id' => 1, 'quantity' => '1'),
+      array('id' => 5, 'package_id' => 2, 'item_id' => 2, 'quantity' => '2'),
+      array('id' => 6, 'package_id' => 2, 'item_id' => 3, 'quantity' => '1'),
+      array('id' => 7, 'package_id' => 3, 'item_id' => 1, 'quantity' => '1'),
+      array('id' => 8, 'package_id' => 3, 'item_id' => 2, 'quantity' => '3'),
+      array('id' => 9, 'package_id' => 3, 'item_id' => 3, 'quantity' => '1'),
     ));
   }
 
@@ -42,6 +45,6 @@ class PackageItems extends Migration
   public function down()
   {
     //
-    Schema::drop('packageitems');
+    Schema::drop('package_items');
   }
 }

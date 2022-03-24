@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Orders extends Migration
+class UserPackages extends Migration
 {
   /**
    * Run the migrations.
@@ -14,12 +14,15 @@ class Orders extends Migration
   public function up()
   {
     //
-    Schema::create('orders', function (Blueprint $table) {
+    Schema::create('user_packages', function (Blueprint $table) {
       $table->bigIncrements('id'); //Package Id
-      $table->string('user_id');
-      $table->string('total');
+      $table->unsignedBigInteger('user_id');
+      $table->unsignedBigInteger('package_id');
+      $table->unsignedBigInteger('order_id')->nullable();
       $table->timestamps();
       $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
+      $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
     });
   }
 
@@ -31,6 +34,6 @@ class Orders extends Migration
   public function down()
   {
     //
-    Schema::drop('orders');
+    Schema::create('user_packages');
   }
 }
