@@ -21,7 +21,7 @@ class Items extends Migration
       $table->string('name');
       $table->string('sku')->unique();
       $table->string('rating');
-      $table->string('cost');
+      $table->string('price');
       $table->string('detail');
     });
     DB::table('items')->insert(array(
