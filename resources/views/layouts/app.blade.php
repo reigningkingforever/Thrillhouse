@@ -20,7 +20,8 @@
      <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
      <link rel="icon" type="image/png" href="{{asset('img/favicon.ico')}}">
      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-     <title>Light Bootstrap Dashboard - Free Bootstrap 4 Admin Dashboard by Creative Tim</title>
+     <meta name="csrf-token" content="{{ csrf_token() }}">
+     <title>Thrillhouse</title>
      <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
      <!--     Fonts and icons     -->
      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -30,7 +31,7 @@
      <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
      <link href="{{asset('css/light-bootstrap-dashboard.css?v=2.0.0')}}" rel="stylesheet" />
      <!-- CSS Just for demo purpose, don't include it in your project -->
-     <link href="{{asset('css/demo.css')}}" rel="stylesheet" />
+     <!-- <link href="{{asset('css/demo.css')}}" rel="stylesheet" /> -->
  </head>
  
  <body>
@@ -54,6 +55,7 @@
  <!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
  <script src="{{asset('js/light-bootstrap-dashboard.js?v=2.0.0')}}" type="text/javascript"></script>
  <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+ @stack('scripts')
  <script src="{{asset('js/demo.js')}}"></script>
  
  </html>
