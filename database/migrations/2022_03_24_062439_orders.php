@@ -16,10 +16,10 @@ class Orders extends Migration
     //
     Schema::create('orders', function (Blueprint $table) {
       $table->bigIncrements('id'); //Package Id
-      $table->string('user_id');
-      $table->string('total');
+      $table->unsignedBigInteger('customer_id');
+      $table->double('total');
       $table->timestamps();
-      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
     });
   }
 

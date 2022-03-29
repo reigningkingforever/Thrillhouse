@@ -12,5 +12,8 @@
 */
 Route::get('/',[App\Http\Controllers\MessageController::class,'index']);
 Route::post('storeMessage',[App\Http\Controllers\MessageController::class,'store'])->name("storeMessage");
-Route::view('dashboard','layouts.app');
-Route::view('login','login');
+// Route::get('categories',);
+// Route::post('categories');
+Auth::routes();
+
+Route::get('/dashboard', 'HomeController@index')->name('dashboard');
