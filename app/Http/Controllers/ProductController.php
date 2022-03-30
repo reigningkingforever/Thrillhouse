@@ -46,11 +46,6 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function appliances()
     {
         $appliances = Appliance::all();
@@ -58,7 +53,7 @@ class ProductController extends Controller
     }
     public function storeAppliance(Request $request)
     {
-        dd($request->all());
+        $appliance = Appliance::updateOrCreate(['name'=> $request->name],['power_unit'=> $request->power_unit]);
         return redirect()->back();
     }
     public function deleteAppliance(Request $request){
