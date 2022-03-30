@@ -1,0 +1,55 @@
+body {
+    height: 100% !important;
+  }
+
+#chat-container {
+    max-height: 90% !important;
+    overflow-y: scroll !important;
+}
+/* width */
+#chat-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  #chat-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  #chat-container::-webkit-scrollbar-thumb {
+    background: #e0e0e0; 
+  }
+  
+  /* Handle on hover */
+  #chat-container::-webkit-scrollbar-thumb:hover {
+    background: #bdbdbd; 
+  }
+
+  .input-group input {
+    color: #424242 !important;
+    background-color: transparent !important;
+  }
+  .input-group input::-webkit-input-placeholder { /* Edge */
+    color: #757575;
+  }
+  
+  .input-group input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #757575;
+  }
+  
+  .input-group input::placeholder {
+    color: #757575;
+  }
+  .send-btn {
+      color: #616161;
+    
+   
+  }
+  .send-btn i {
+     font-size: 20px;
+  }
+.footer {
+    position:absolute;
+    bottom: 5px;
+}

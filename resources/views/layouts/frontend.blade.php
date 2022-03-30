@@ -1,17 +1,4 @@
-<!--
-=========================================================
- Light Bootstrap Dashboard - v2.0.1
-=========================================================
 
- Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard
- Copyright 2019 Creative Tim (https://www.creative-tim.com)
- Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE)
-
- Coded by Creative Tim
-
-=========================================================
-
- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  -->
  <!DOCTYPE html>
  <html lang="en">
  
@@ -26,21 +13,23 @@
      <!--     Fonts and icons     -->
      {{-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" /> --}}
      {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" /> --}}
+     <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome/css/all.min.css')}}">
      <!-- CSS Files -->
      {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
      <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
      <link href="{{asset('css/light-bootstrap-dashboard.css?v=2.0.0')}}" rel="stylesheet" />
      @stack('styles')
-     <!-- <link href="{{asset('css/demo.css')}}" rel="stylesheet" /> -->
  </head>
  
- <body>
+ <body style="overflow: hidden">
      <div class="wrapper">
         
         @yield('main')
-        <footer class="footer">
+        <footer class="footer" style="margin-top: 10vh; width: 100%">
             <div class="container-fluid">
-                <nav>
+                <nav style="display: flex; justify-content: space-between">
                     <ul class="footer-menu">
                         <li>
                             <a href="#">

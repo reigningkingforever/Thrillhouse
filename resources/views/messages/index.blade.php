@@ -1,6 +1,11 @@
 @extends('layouts.frontend')
-@section('styles')
-    <style>
+@push('styles')
+<link rel="stylesheet" href="{{asset('css/custom.css')}}">
+    <!-- <style>
+     
+      .chat-container {
+        height: 80vh;
+      }
       #chat-box {
           overflow-y: scroll;
           scrollbar-width: none; /* Firefox */
@@ -9,19 +14,15 @@
   #chat-box::-webkit-scrollbar { /* WebKit */
       width: 0;
       height: 0;
-  }
-@endsection
+  } -->
+@endpush
 @section('main')
-<div class="container pt-4 pb-2 px-4 overflow-hidden">
-  <!-- For demo purpose-->
-  
-
-  <div class="row rounded-md shadow justify-content-center overflow-hidden">
-    <!-- Users box-->
+<div class="container pt-4 pb-2 px-4 overflow-hidden mt-4" id="chat-container">
+  <div class="row rounded-md shadow justify-content-center overflow-hidden pt-4">
     
     <!-- Chat Box-->
     <div class="col-9 px-0 overflow-hidden">
-      <div class="px-4 py-2 chat-box overflow-auto bg-white" id="chat-box" style="height:450px;">
+      <div class="px-4 py-2 chat-box overflow-auto bg-white" id="chat-box" >
         <!-- Sender Message-->
         <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
           <div class="media-body ml-3">
@@ -85,15 +86,34 @@
             </div>
           </div>
         </div>
+        <!-- Sender Message-->
+        <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
+          <div class="media-body ml-3">
+            <div class="bg-light rounded py-2 px-3 mb-2">
+              <p class="text-small mb-0 text-muted">So you do know what you are looking for?</p>
+            </div>
+            <p class="small text-muted">12:00 PM | Aug 13</p>
+          </div>
+        </div>
+
+        <!-- Reciever Message-->
+        <div class="media w-50 ml-auto mb-3">
+          <div class="media-body">
+            <div class="rounded py-2 px-3 mb-2">
+              <button class="btn-primary btn">Yes</button>
+              <button class="btn-danger btn">No</button>
+            </div>
+          </div>
+        </div>
 
       </div>
 
       <!-- Typing area -->
       <form class="bg-light mb-4"  id="chat-form">
         <div class="input-group">
-          <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+          <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 ">
           <div class="input-group-append">
-            <button id="button-addon2" type="submit" class="btn btn-link"> <i class="fa fa-paper-plane"></i></button>
+            <button id="button-addon2" type="submit" class="btn btn-link send-btn"> <i class="fas fa-paper-plane" ></i></button>
           </div>
         </div>
       </form>
@@ -106,6 +126,10 @@
 
 @push('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script type="text/javascript">
+let chatBox = document.getElementById('chat-box');
+$("#chat-container").animate({scrollTop:($("#chat-container")[0].scrollHeight)}, 2500);
+</script>
 <script type="text/javascript">
 
 $('#chat-form').on('submit',function(e){
