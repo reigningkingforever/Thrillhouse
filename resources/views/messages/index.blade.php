@@ -128,7 +128,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script type="text/javascript">
 let chatBox = document.getElementById('chat-box');
-$("#chat-container").scrollTop($("#chat-container")[0].scrollHeight);
+$("#chat-container").animate({scrollTop:($("#chat-container")[0].scrollHeight)}, 2500);
 </script>
 <script type="text/javascript">
 
