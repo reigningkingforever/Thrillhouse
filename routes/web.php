@@ -17,7 +17,9 @@ Auth::routes();
 
 Route::get('dashboard', 'HomeController@index')->name('dashboard');
 Route::get('quotes', 'UserController@index')->name('quotes');
-Route::get('quote/{customer}', 'UserController@show')->name('quote.show');
+Route::get('quote/{customer}', 'UserController@show')->name('customer.show');
+Route::post('quote/save', 'UserController@store')->name('customer.save');
+Route::post('quote/delete', 'UserController@destroy')->name('customer.delete');
 
 Route::get('categories', 'ProductController@categories')->name('categories');
 Route::post('category/save', 'ProductController@storeCategory')->name('category.save');

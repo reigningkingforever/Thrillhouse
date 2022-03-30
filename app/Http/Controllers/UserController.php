@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Customer;
 class UserController extends Controller
 {
     /**
@@ -13,11 +13,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $customers = Customer::orderBy('created_at','desc')->get();
+        return view('quotes',compact('customers'));
     }
-    public function show(User $user)
+    public function show(Customer $customer)
     {
-        //
+        return view('user',compact('customer'));
     }
 
     /**
@@ -77,7 +78,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
         //
     }

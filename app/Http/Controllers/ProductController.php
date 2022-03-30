@@ -38,7 +38,7 @@ class ProductController extends Controller
     }
     public function storeItem(Request $request)
     {
-        $item = Item::updateOrCreate(['sku'=> $request->sku],['name'=> $request->name,'detail'=>$request->detail,'category_id'=> $request->category_id,'rating'=> $request->rating,'amount'=> $request->amount]);
+        $item = Item::updateOrCreate(['sku'=> $request->sku],['name'=> $request->name,'details'=>$request->details,'category_id'=> $request->category_id,'rating'=> $request->rating,'amount'=> $request->amount]);
         return redirect()->back();
     }
     public function deleteItem(Request $request){
@@ -63,7 +63,8 @@ class ProductController extends Controller
     public function packages()
     {
         $packages = Package::all();
-        return view('packages',compact('packages'));
+        $items = Item::all();
+        return view('packages',compact('packages','items'));
     }
     public function storePackage(Request $request)
     {

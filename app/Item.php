@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Category;
 class Item extends Model
 {
-    protected $fillable = ['name','detail','sku','category_id','rating','amount'];
+    protected $fillable = ['name','details','sku','category_id','rating','amount'];
 
     public static function boot(){
         parent::boot();

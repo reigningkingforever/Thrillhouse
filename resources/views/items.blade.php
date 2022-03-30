@@ -31,7 +31,7 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$item->name}}</td>
-                                            <td>{{$item->detail}}</td>
+                                            <td>{{$item->details}}</td>
                                             <td>{{$item->category->name}}</td>
                                             <td>{{$item->sku}}</td>
                                             <td>{{$item->rating}}</td>
@@ -74,11 +74,11 @@
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <label class="form-label">Model Number</label>
-                                                                                        <input type="text" name="detail" value="{{$item->sku}}" class="form-control">
+                                                                                        <input type="text" name="details" value="{{$item->sku}}" class="form-control">
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <label class="form-label">Details</label>
-                                                                                        <input type="text" name="detail" value="{{$item->detail}}" class="form-control">
+                                                                                        <input type="text" name="details" value="{{$item->details}}" class="form-control">
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <label class="form-label">Category</label>
@@ -149,11 +149,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Model Number</label>
-                                        <input type="text" name="detail" class="form-control">
+                                        <input type="text" name="details" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Details</label>
-                                        <input type="text" name="detail" class="form-control">
+                                        <input type="text" name="details" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Category</label>

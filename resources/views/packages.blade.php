@@ -20,16 +20,18 @@
                                     <th>S/N</th>
                                     <th>Name</th>
                                     <th>Details</th>
-                                    <th>Item Count</th>
+                                    <th>Item</th>
+                                    <th>Amount</th>
                                     <th>Action</th>
                                 </thead>
                                 <tbody>
-                                    @forelse ($categories as $package)
+                                    @forelse ($packages as $package)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
-                                            <td>{{$package->name}}</td>
+                                            <td>{{$package->name}}-{{$package->type}}</td>
                                             <td>{{$package->details}}</td>
                                             <td>{{$package->items->count()}}</td>
+                                            <td>{{$package->amount}}</td>
                                             <td>
                                                 <div class="d-flex">
                                                     <a class="btn btn-sm btn-info"
@@ -65,18 +67,33 @@
                                                                             
                                                                                     <div class="form-group">
                                                                                         <label class="col-form-label">Name</label>
-                                                                                        
-                                                                                            <input type="text" name="name" class="form-control" value="{{$package->name}}">
-                                                                                        
+                                                                                        <input type="text" name="name" class="form-control" value="{{$package->name}}">
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label class="col-form-label">Type</label>
+                                                                                        <select name="type" class="form-control">
+                                                                                            <option>A</option>
+                                                                                            <option>B</option>
+                                                                                            <option>C</option>
+                                                                                            <option>D</option>
+                                                                                        </select>
                                                                                     </div>
                                                                                     <div class="form-group">
                                                                                         <label class=" col-form-label">Details</label>
                                                                                         <input type="text" name="details" class="form-control" value="{{$package->details}}">
                                                                                     </div>
-                                                                                
-                                                                                    
-                                                                                    
-                                    
+                                                                                    <div class="form-group">
+                                                                                        <label class="col-form-label">Items</label>
+                                                                                        <select name="items[]" class="form-control" multiple>
+                                                                                            @foreach ($items as $item)
+                                                                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                                                                            @endforeach
+                                                                                        </select>
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label class=" col-form-label">Amount</label>
+                                                                                        <input type="text" name="amount" class="form-control" value="{{$package->amount}}">
+                                                                                    </div>
                                                                                     <div class="text-right">
                                                                                         <button type="submit" class="btn btn-primary">Submit</button>
                                                                                     </div>
