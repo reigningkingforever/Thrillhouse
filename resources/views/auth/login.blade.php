@@ -3,7 +3,7 @@
 <div class="content">
     <h3>Login</h3>
     <hr />
-    <form>
+    <form action="{{route('login')}}" method="POST">@csrf
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input id="email" type="email" placeholder="Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -25,7 +25,7 @@
       <button type="submit" class="btn btn-primary">Login</button>
       <hr />
       {{-- <button type="button" class="btn btn-link">Signup</button> --}}
-      <a type="button" class="btn btn-link">Reset Password</a>
+      <a href="{{route('forgot.password')}}" type="button" class="btn btn-link">Reset Password</a>
 
     </form>
   </div>

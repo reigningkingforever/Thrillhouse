@@ -1,15 +1,27 @@
-@extends('layouts.app')
+@extends('layouts.frontend')
+@section('styles')
+    <style>
+      #chat-box {
+          overflow-y: scroll;
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      }
+  #chat-box::-webkit-scrollbar { /* WebKit */
+      width: 0;
+      height: 0;
+  }
+@endsection
 @section('main')
-<div class="container py-5 px-4 ">
+<div class="container pt-4 pb-2 px-4 overflow-hidden">
   <!-- For demo purpose-->
   
 
-  <div class="row rounded-md overflow-hidden shadow justify-content-center">
+  <div class="row rounded-md shadow justify-content-center overflow-hidden">
     <!-- Users box-->
     
     <!-- Chat Box-->
-    <div class="col-9 px-0">
-      <div class="px-4 py-5 chat-box bg-white" id="chat-box">
+    <div class="col-9 px-0 overflow-hidden">
+      <div class="px-4 py-2 chat-box overflow-auto bg-white" id="chat-box" style="height:450px;">
         <!-- Sender Message-->
         <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
           <div class="media-body ml-3">

@@ -2,8 +2,8 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Bootstrap 3 Centered Login</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <title>Thrillhouse Quotes Backend</title>
+  <link rel='stylesheet' href="{{asset('css/bootstrap.min.css')}}">
   <style>
       .back {
   background: #e2e2e2;
