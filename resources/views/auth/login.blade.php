@@ -25,7 +25,7 @@
       <button type="submit" class="btn btn-primary">Login</button>
       <hr />
       {{-- <button type="button" class="btn btn-link">Signup</button> --}}
-      <a href="{{route('forgot.password')}}" type="button" class="btn btn-link">Reset Password</a>
+      <a href="{{route('password.request')}}" type="button" class="btn btn-link">Reset Password</a>
 
     </form>
   </div>
