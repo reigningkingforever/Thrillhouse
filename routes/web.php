@@ -12,8 +12,25 @@
 */
 Route::get('/',[App\Http\Controllers\MessageController::class,'index']);
 Route::post('storeMessage',[App\Http\Controllers\MessageController::class,'store'])->name("storeMessage");
-// Route::get('categories',);
-// Route::post('categories');
+
 Auth::routes();
 
-Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+Route::get('dashboard', 'HomeController@index')->name('dashboard');
+Route::get('quotes', 'UserController@index')->name('quotes');
+Route::get('quote/{customer}', 'UserController@show')->name('quote.show');
+
+Route::get('categories', 'ProductController@categories')->name('categories');
+Route::post('category/save', 'ProductController@storeCategory')->name('category.save');
+Route::post('category/delete', 'ProductController@deleteCategory')->name('category.delete');
+
+Route::get('items', 'ProductController@items')->name('items');
+Route::post('item/save', 'ProductController@storeItem')->name('item.save');
+Route::post('item/delete', 'ProductController@deleteItem')->name('item.delete');
+
+Route::get('appliances', 'ProductController@appliances')->name('appliances');
+Route::post('appliance/save', 'ProductController@storeAppliance')->name('appliance.save');
+Route::post('appliance/delete', 'ProductController@deleteAppliance')->name('appliance.delete');
+
+Route::get('packages', 'ProductController@packages')->name('packages');
+Route::post('package/save', 'ProductController@storePackage')->name('package.save');
+Route::post('package/delete', 'ProductController@deletePackage')->name('package.delete');
