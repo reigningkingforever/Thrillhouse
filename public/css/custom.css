@@ -28,13 +28,11 @@ body {
 
   .send-btn {
       color: #616161;
-    font-size: 10px;
-    width: 50px;
-    padding: 0;
+    
+   
   }
   .send-btn i {
-      border: 1px solid red;
-      
+     font-size: 20px;
   }
 .footer {
     position:absolute;
