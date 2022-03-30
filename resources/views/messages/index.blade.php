@@ -111,7 +111,7 @@
       <!-- Typing area -->
       <form class="bg-light mb-4"  id="chat-form">
         <div class="input-group">
-          <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+          <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 ">
           <div class="input-group-append">
             <button id="button-addon2" type="submit" class="btn btn-link send-btn"> <i class="fas fa-paper-plane" ></i></button>
           </div>

@@ -27,9 +27,9 @@
      <div class="wrapper">
         
         @yield('main')
-        <footer class="footer" style="margin-top: 10vh">
+        <footer class="footer" style="margin-top: 10vh; width: 100%">
             <div class="container-fluid">
-                <nav>
+                <nav style="display: flex; justify-content: space-between">
                     <ul class="footer-menu">
                         <li>
                             <a href="#">

@@ -26,6 +26,21 @@ body {
     background: #bdbdbd; 
   }
 
+  .input-group input {
+    color: #424242 !important;
+    background-color: transparent !important;
+  }
+  .input-group input::-webkit-input-placeholder { /* Edge */
+    color: #757575;
+  }
+  
+  .input-group input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #757575;
+  }
+  
+  .input-group input::placeholder {
+    color: #757575;
+  }
   .send-btn {
       color: #616161;
     
