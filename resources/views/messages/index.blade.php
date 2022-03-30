@@ -26,7 +26,9 @@
         <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
           <div class="media-body ml-3">
             <div class="bg-light rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-muted">Test which is a new approach all solutions</p>
+              <p class="text-small mb-0 text-muted">Welcome, I am a chatbox and I will help you determine what you need.
+                <br> Please tell me your email address
+                </p>
             </div>
             <p class="small text-muted">12:00 PM | Aug 13</p>
           </div>
@@ -36,7 +38,7 @@
         <div class="media w-50 ml-auto mb-3">
           <div class="media-body">
             <div class="bg-primary rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-white">Test which is a new approach to have all solutions</p>
+              <p class="text-small mb-0 text-white">My email is something@gmail.com</p>
             </div>
             <p class="small text-muted">12:00 PM | Aug 13</p>
           </div>
@@ -46,7 +48,9 @@
         <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
           <div class="media-body ml-3">
             <div class="bg-light rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-muted">Test, which is a new approach to have</p>
+              <p class="text-small mb-0 text-muted">Great, Thanks
+                <br> Could you also give me your phone number
+              </p>
             </div>
             <p class="small text-muted">12:00 PM | Aug 13</p>
           </div>
@@ -56,7 +60,7 @@
         <div class="media w-50 ml-auto mb-3">
           <div class="media-body">
             <div class="bg-primary rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+              <p class="text-small mb-0 text-white">08034903455</p>
             </div>
             <p class="small text-muted">12:00 PM | Aug 13</p>
           </div>
@@ -66,7 +70,7 @@
         <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
           <div class="media-body ml-3">
             <div class="bg-light rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-muted">Test, which is a new approach</p>
+              <p class="text-small mb-0 text-muted">So you do know what you are looking for?</p>
             </div>
             <p class="small text-muted">12:00 PM | Aug 13</p>
           </div>
@@ -75,10 +79,10 @@
         <!-- Reciever Message-->
         <div class="media w-50 ml-auto mb-3">
           <div class="media-body">
-            <div class="bg-primary rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-white">Apollo University, Delhi, India Test</p>
+            <div class="rounded py-2 px-3 mb-2">
+              <button class="btn-primary btn">Yes</button>
+              <button class="btn-danger btn">No</button>
             </div>
-            <p class="small text-muted">12:00 PM | Aug 13</p>
           </div>
         </div>
 
