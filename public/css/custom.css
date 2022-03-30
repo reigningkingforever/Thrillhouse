@@ -3,10 +3,39 @@ body {
   }
 
 #chat-container {
-    max-height: 80% !important;
-    overflow: scroll;
+    max-height: 90% !important;
+    overflow-y: scroll !important;
 }
+/* width */
+#chat-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  #chat-container::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  #chat-container::-webkit-scrollbar-thumb {
+    background: #e0e0e0; 
+  }
+  
+  /* Handle on hover */
+  #chat-container::-webkit-scrollbar-thumb:hover {
+    background: #bdbdbd; 
+  }
 
+  .send-btn {
+      color: #616161;
+    font-size: 10px;
+    width: 50px;
+    padding: 0;
+  }
+  .send-btn i {
+      border: 1px solid red;
+      
+  }
 .footer {
     position:absolute;
     bottom: 5px;

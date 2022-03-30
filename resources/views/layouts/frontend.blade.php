@@ -13,6 +13,9 @@
      <!--     Fonts and icons     -->
      {{-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" /> --}}
      {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" /> --}}
+     <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome/css/fontawesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome/css/all.min.css')}}">
      <!-- CSS Files -->
      {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> --}}
      <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet" />
@@ -24,7 +27,7 @@
      <div class="wrapper">
         
         @yield('main')
-        <footer class="footer" style="margin-top: 12vh">
+        <footer class="footer" style="margin-top: 10vh">
             <div class="container-fluid">
                 <nav>
                     <ul class="footer-menu">
