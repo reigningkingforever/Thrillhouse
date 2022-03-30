@@ -1,6 +1,11 @@
 @extends('layouts.frontend')
-@section('styles')
-    <style>
+@push('styles')
+<link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+    <!-- <style>
+     
+      .chat-container {
+        height: 80vh;
+      }
       #chat-box {
           overflow-y: scroll;
           scrollbar-width: none; /* Firefox */
@@ -9,19 +14,15 @@
   #chat-box::-webkit-scrollbar { /* WebKit */
       width: 0;
       height: 0;
-  }
-@endsection
+  } -->
+@endpush
 @section('main')
-<div class="container pt-4 pb-2 px-4 overflow-hidden">
-  <!-- For demo purpose-->
-  
-
-  <div class="row rounded-md shadow justify-content-center overflow-hidden">
-    <!-- Users box-->
+<div class="container pt-4 pb-2 px-4 overflow-hidden mt-4" id="chat-container">
+  <div class="row rounded-md shadow justify-content-center overflow-hidden pt-4">
     
     <!-- Chat Box-->
     <div class="col-9 px-0 overflow-hidden">
-      <div class="px-4 py-2 chat-box overflow-auto bg-white" id="chat-box" style="height:450px;">
+      <div class="px-4 py-2 chat-box overflow-auto bg-white" id="chat-box" >
         <!-- Sender Message-->
         <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
           <div class="media-body ml-3">
