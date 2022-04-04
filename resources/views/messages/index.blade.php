@@ -1,130 +1,53 @@
 @extends('layouts.frontend')
-@push('styles')
-<link rel="stylesheet" href="{{asset('css/custom.css')}}">
-    <!-- <style>
-     
-      .chat-container {
-        height: 80vh;
-      }
-      #chat-box {
-          overflow-y: scroll;
-          scrollbar-width: none; /* Firefox */
-          -ms-overflow-style: none;  /* Internet Explorer 10+ */
-      }
-  #chat-box::-webkit-scrollbar { /* WebKit */
-      width: 0;
-      height: 0;
-  } -->
-@endpush
+
 @section('main')
-<div class="container pt-4 pb-2 px-4 overflow-hidden mt-4" id="chat-container">
-  <div class="row rounded-md shadow justify-content-center overflow-hidden pt-4">
-    
-    <!-- Chat Box-->
-    <div class="col-9 px-0 overflow-hidden">
-      <div class="px-4 py-2 chat-box overflow-auto bg-white" id="chat-box" >
-        <!-- Sender Message-->
-        <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
-          <div class="media-body ml-3">
-            <div class="bg-light rounded py-2 px-3 mb-2">
-              
-              <p class="text-small mb-0 text-muted">Welcome, I am a chatbox and I will help you determine what you need.
-                <br> Please tell me your email address
-                </p>
+<div class="main">
+
+    <div class="container">
+        <form method="POST" id="signup-form" class="signup-form" action="#">
+            <div>
+                <h3></h3>
+                <fieldset>
+                    <input type="text" name="first_name" id="first_name" />
+                    <label for="first_name" class="form-label">01 . What is your first name ?</label>
+                </fieldset>
+
+                <h3></h3>
+                <fieldset>
+                    <input type="text" name="last_name" id="last_name" />
+                    <label for="last_name" class="form-label">02 . What is your last name ?</label>
+                </fieldset>
+
+                <h3></h3>
+                <fieldset>
+                    <input type="email" name="email" id="email" />
+                    <label for="email" class="form-label">03 . What is your Email ?</label>
+                </fieldset>
+
+                <h3></h3>
+                <fieldset>
+                    <input type="text" name="password" id="password" />
+                    <label for="password" class="form-label">04 . Create your password</label>
+                    <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                </fieldset>
+
+                <h3></h3>
+                <fieldset>
+                    <input type="text" name="re_password" id="re_password" />
+                    <label for="re_password" class="form-label">05 . Repeat your password </label>
+                    <span toggle="#re_password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                </fieldset>
             </div>
-            <p class="small text-muted">12:00 PM | Aug 13</p>
-          </div>
-        </div>
-
-        <!-- Reciever Message-->
-        <div class="media w-50 ml-auto mb-3">
-          <div class="media-body">
-            <div class="bg-primary rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-white">My email is something@gmail.com</p>
-            </div>
-            <p class="small text-muted">12:00 PM | Aug 13</p>
-          </div>
-        </div>
-
-        <!-- Sender Message-->
-        <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
-          <div class="media-body ml-3">
-            <div class="bg-light rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-muted">Great, Thanks
-                <br> Could you also give me your phone number
-              </p>
-            </div>
-            <p class="small text-muted">12:00 PM | Aug 13</p>
-          </div>
-        </div>
-
-        <!-- Reciever Message-->
-        <div class="media w-50 ml-auto mb-3">
-          <div class="media-body">
-            <div class="bg-primary rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-white">08034903455</p>
-            </div>
-            <p class="small text-muted">12:00 PM | Aug 13</p>
-          </div>
-        </div>
-
-        <!-- Sender Message-->
-        <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
-          <div class="media-body ml-3">
-            <div class="bg-light rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-muted">So you do know what you are looking for?</p>
-            </div>
-            <p class="small text-muted">12:00 PM | Aug 13</p>
-          </div>
-        </div>
-
-        <!-- Reciever Message-->
-        <div class="media w-50 ml-auto mb-3">
-          <div class="media-body">
-            <div class="rounded py-2 px-3 mb-2">
-              <button class="btn-primary btn">Yes</button>
-              <button class="btn-danger btn">No</button>
-            </div>
-          </div>
-        </div>
-        <!-- Sender Message-->
-        <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
-          <div class="media-body ml-3">
-            <div class="bg-light rounded py-2 px-3 mb-2">
-              <p class="text-small mb-0 text-muted">So you do know what you are looking for?</p>
-            </div>
-            <p class="small text-muted">12:00 PM | Aug 13</p>
-          </div>
-        </div>
-
-        <!-- Reciever Message-->
-        <div class="media w-50 ml-auto mb-3">
-          <div class="media-body">
-            <div class="rounded py-2 px-3 mb-2">
-              <button class="btn-primary btn">Yes</button>
-              <button class="btn-danger btn">No</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Typing area -->
-      <form class="bg-light mb-4"  id="chat-form">
-        <div class="input-group">
-          <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 ">
-          <div class="input-group-append">
-            <button id="button-addon2" type="submit" class="btn btn-link send-btn"> <i class="fas fa-paper-plane" ></i></button>
-          </div>
-        </div>
-      </form>
-
+        </form>
     </div>
-  </div>
+
 </div>
 
 @endsection
 
 @push('scripts')
-@include('messages.script')
+
+
+
+
 @endpush
