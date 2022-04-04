@@ -27,6 +27,7 @@
         <div class="media w-50 mb-3"><img src="https://bootstrapious.com/i/snippets/sn-chat/avatar.svg" alt="user" width="50" class="rounded-circle">
           <div class="media-body ml-3">
             <div class="bg-light rounded py-2 px-3 mb-2">
+              
               <p class="text-small mb-0 text-muted">Welcome, I am a chatbox and I will help you determine what you need.
                 <br> Please tell me your email address
                 </p>
@@ -125,41 +126,5 @@
 @endsection
 
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-<script type="text/javascript">
-let chatBox = document.getElementById('chat-box');
-$("#chat-container").animate({scrollTop:($("#chat-container")[0].scrollHeight)}, 2500);
-</script>
-<script type="text/javascript">
-
-$('#chat-form').on('submit',function(e){
-    e.preventDefault();
-    var message = $('input[type=text]').val();
-    $.ajax({
-        url: "{{ route('storeMessage') }}",
-        dataType: 'json', 
-        type:'POST',
-        data:{
-            '_token' : $('meta[name="csrf-token"]').attr('content'),
-            message:message
-        },
-        success:function(data){
-            // console.log(data)
-            // console.log(data.date)
-            $('input[type=text]').val('');
-            $('#chat-box').append(
-                '<div class="media w-50 ml-auto mb-3">'+
-                    '<div class="media-body">'+
-                        '<div class="bg-primary rounded py-2 px-3 mb-2">'+
-                            '<p class="text-small mb-0 text-white">'+data.message+'</p>'+
-                        '</div>'+   
-                        '<p class="small text-muted">' +data.time +' | ' + data.date + '</p>'+
-                    '</div>'+
-                '</div>'
-            );
-        }
-    });
-});
-
-</script>
+@include('messages.script')
 @endpush

@@ -85,6 +85,18 @@
                             <p>Packages</p>
                         </a>
                     </li>
+                    <li class="nav-item @if(Route::is('settings')) active @endif">
+                        <a class="nav-link" href="{{route('settings')}}">
+                            <i class="nc-icon nc-pin-3"></i>
+                            <p>Settings</p>
+                        </a>
+                    </li>
+                    <li class="nav-item @if(Route::is('admins')) active @endif">
+                        <a class="nav-link" href="{{route('admins')}}">
+                            <i class="nc-icon nc-pin-3"></i>
+                            <p>Admins</p>
+                        </a>
+                    </li>
                     
                 </ul>
             </div>
@@ -94,7 +106,7 @@
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#pablo"> Admin </a>
-                   
+                    
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         
                         <ul class="navbar-nav ml-auto">

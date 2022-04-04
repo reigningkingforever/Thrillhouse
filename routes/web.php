@@ -36,3 +36,10 @@ Route::post('appliance/delete', 'ProductController@deleteAppliance')->name('appl
 Route::get('packages', 'ProductController@packages')->name('packages');
 Route::post('package/save', 'ProductController@storePackage')->name('package.save');
 Route::post('package/delete', 'ProductController@deletePackage')->name('package.delete');
+
+Route::get('settings', 'AdminController@settings')->name('settings');
+Route::post('settings/save', 'AdminController@storeSettings')->name('settings.save');
+
+Route::get('admins', 'AdminController@admins')->name('admins');
+Route::post('admin/save', 'AdminController@saveAdmin')->name('admin.save');
+Route::post('admin/delete', 'AdminController@deleteAdmin')->name('admin.delete');
